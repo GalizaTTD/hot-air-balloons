@@ -1,0 +1,58 @@
+
+// Purchase templates
+
+spriteset (northPurchase_Spriteset, "src/gfx/airship_mast/GROUND_N.gimp.png") {	mastTemplate()  }
+spriteset (eastPurchase_Spriteset, "src/gfx/airship_mast/GROUND_E.gimp.png") {	mastTemplate()  }
+spriteset (southPurchase_Spriteset, "src/gfx/airship_mast/GROUND_S.gimp.png") {	mastTemplate()  }
+spriteset (westPurchase_Spriteset, "src/gfx/airship_mast/GROUND_W.gimp.png") {	mastTemplate()  }
+
+//Airport
+item (FEAT_AIRPORTTILES, airtile_blank, 0x0) {
+  property { substitute: 0;  }
+  graphics { default: StoneGround_SpriteLayout;  }
+}
+
+tilelayout N_TileLayout {
+  rotation: DIRECTION_NORTH;
+  0, 0: airtile_blank;
+}
+tilelayout E_TileLayout {
+  rotation: DIRECTION_EAST;
+  0, 0: airtile_blank;
+}
+tilelayout S_TileLayout {
+  rotation: DIRECTION_SOUTH;
+  0, 0: airtile_blank;
+}
+tilelayout W_TileLayout {
+  rotation: DIRECTION_WEST;
+  0, 0: airtile_blank;
+}
+
+item (FEAT_AIRPORTS, retainbase, 0x0) {property {override: 2;}}
+
+switch(FEAT_AIRPORTS, SELF, AirportName_Switch, layout) {
+   0: return string(STR_NORTH);
+   1: return string(STR_EAST);
+   2: return string(STR_SOUTH);
+   3: return string(STR_WEST);
+}
+
+switch(FEAT_AIRPORTS, SELF, AirportPurchaseIcons_Switch, layout) {
+   0: northPurchase_Spriteset;
+   1: eastPurchase_Spriteset;
+   2: southPurchase_Spriteset;
+   3: westPurchase_Spriteset;
+}
+
+item (FEAT_AIRPORTS, airp_mast, 0x1) {
+   property {
+      override: 2;
+      name: string(STR_AIRP);
+      layouts: [N_TileLayout,E_TileLayout,S_TileLayout,W_TileLayout];
+   }
+   graphics {
+      default: AirportPurchaseIcons_Switch;
+      layout_name: AirportName_Switch;
+   }
+}

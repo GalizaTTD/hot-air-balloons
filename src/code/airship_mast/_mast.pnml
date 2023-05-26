@@ -1,0 +1,87 @@
+spriteset (mast_Spriteset, "src/gfx/airship_mast/MAST.gimp.png") {	mastTemplate()  }
+spriteset (mastSnow_Spriteset, "src/gfx/airship_mast/MAST_SNOW.gimp.png") {	mastTemplate()  }
+
+spritelayout MastWithGrassGround_SpriteLayout {
+	ground {		sprite: GROUNDSPRITE_NORMAL;	}
+	building {		sprite: mast_Spriteset;		recolour_mode: RECOLOUR_REMAP;		palette: PALETTE_USE_DEFAULT;	}
+}
+spritelayout SnowMastWithGrassGround_SpriteLayout {
+	ground {		sprite: GROUNDSPRITE_NORMAL;	}
+	building {		sprite: mastSnow_Spriteset;		recolour_mode: RECOLOUR_REMAP;		palette: PALETTE_USE_DEFAULT;	}
+}
+spritelayout SnowMastWithSnowGround_SpriteLayout {
+	ground {		sprite: GROUNDSPRITE_SNOW;	}
+	building {		sprite: mastSnow_Spriteset;		recolour_mode: RECOLOUR_REMAP;		palette: PALETTE_USE_DEFAULT;	}
+}
+
+
+spritelayout MastWithStoneGround_SpriteLayout {
+	ground {		sprite: ground_Spriteset;	}
+	building {		sprite: mast_Spriteset;		recolour_mode: RECOLOUR_REMAP;		palette: PALETTE_USE_DEFAULT;	}
+}
+spritelayout SnowMastWithStoneGround_SpriteLayout {
+	ground {		sprite: ground_Spriteset;	}
+	building {		sprite: mastSnow_Spriteset;		recolour_mode: RECOLOUR_REMAP;		palette: PALETTE_USE_DEFAULT;	}
+}
+
+
+
+switch (FEAT_OBJECTS, SELF, MastWithGrassSnowAware_Switch, terrain_type == TILETYPE_SNOW) {
+   1: SnowMastWithSnowGround_SpriteLayout;
+   MastWithGrassGround_SpriteLayout;
+}
+
+switch (FEAT_OBJECTS, SELF, MastWithStoneSnowAware_Switch, terrain_type == TILETYPE_SNOW) {
+	1: SnowMastWithSnowGround_SpriteLayout;
+	MastWithStoneGround_SpriteLayout;
+}
+
+switch (FEAT_OBJECTS, SELF, MastWithGrass_Switch, terrain_type == TILETYPE_SNOW) {
+   1: SnowMastWithGrassGround_SpriteLayout;
+   MastWithGrassGround_SpriteLayout;
+}
+
+switch (FEAT_OBJECTS, SELF, MastWithStone_Switch, terrain_type == TILETYPE_SNOW) {
+	1: SnowMastWithStoneGround_SpriteLayout;
+	MastWithStoneGround_SpriteLayout;
+}
+
+
+switch (FEAT_OBJECTS, SELF, switch_stone_sprite, view) {
+   0: MastWithGrassSnowAware_Switch;
+   1: MastWithStoneSnowAware_Switch;
+   2: MastWithGrass_Switch;
+   3: MastWithStone_Switch;
+}
+switch (FEAT_OBJECTS, SELF, switch_stone_purch, view) {
+   0: MastWithGrassGround_SpriteLayout;
+   1: MastWithStoneGround_SpriteLayout;
+   2: MastWithGrassGround_SpriteLayout;
+   3: MastWithStoneGround_SpriteLayout;
+}
+switch (FEAT_OBJECTS, SELF, switch_snow_text, view) {
+   0: string(STR_SNOW);
+   1: string(STR_SNOW);
+   2: string(STR_NO_SNOW);
+   3: string(STR_NO_SNOW);
+}
+
+item (FEAT_OBJECTS, object_mast) {
+   property {
+      class: "MAST";
+      classname: string(STR_GRF_NAME);
+      name: string(STR_GRF_NAME);
+      climates_available: ALL_CLIMATES;
+      object_flags: bitmask(OBJ_FLAG_ANYTHING_REMOVE, OBJ_FLAG_2CC);
+      build_cost_multiplier: 0;
+      remove_cost_multiplier: 0;
+      size: [1,1];
+      introduction_date: 1900;
+      num_views: 4;
+   }
+   graphics {
+      default: switch_stone_sprite;
+      purchase: switch_stone_purch;
+      additional_text: switch_snow_text;
+   }
+}

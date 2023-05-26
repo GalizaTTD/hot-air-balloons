@@ -1,0 +1,7 @@
+src/gfx/airship_mast/GROUND.gimp.png            src/xcf/airship_mast.xcf     Background GROUND
+src/gfx/airship_mast/GROUND_N.gimp.png          src/xcf/airship_mast.xcf     Background GROUND_N
+src/gfx/airship_mast/GROUND_S.gimp.png          src/xcf/airship_mast.xcf     Background GROUND_S
+src/gfx/airship_mast/GROUND_E.gimp.png          src/xcf/airship_mast.xcf     Background GROUND_E
+src/gfx/airship_mast/GROUND_W.gimp.png          src/xcf/airship_mast.xcf     Background GROUND_W
+src/gfx/airship_mast/MAST.gimp.png              src/xcf/airship_mast.xcf     Background MAST
+src/gfx/airship_mast/MAST_SNOW.gimp.png         src/xcf/airship_mast.xcf     Background MAST_SNOW

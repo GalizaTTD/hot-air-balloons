@@ -1,0 +1,19 @@
+##grflangid 0x04
+##plural 0
+# This is the Spanish language file
+
+# GRF name and description
+STR_GRF_NAME        :{TITLE} {VERSION}
+STR_GRF_DESCRIPTION :{LTBLUE}Versión: {VERSION_STRING}{}{ORANGE}{TITLE} - {SILVER}Airship Mast & Hot Air balloons.{}{}{COPYRIGHT}{AUTHORS}{}{}{COPYRIGHT}{AUTHORS}
+STR_MIN_OPENTTD_VERSION  :Requires OpenTTD >= 1.12.0
+
+
+STR_AIRP				:Airship Mast
+STR_SNOW				:Ground snow aware
+STR_NO_SNOW			:Ground not snow aware
+
+# Cardinal direction
+STR_NORTH			:North
+STR_EAST				:East
+STR_SOUTH			:South
+STR_WEST				:West
