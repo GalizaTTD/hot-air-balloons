@@ -1,0 +1,16 @@
+
+spriteset (SpainRepublicBalloon_SpriteSet, "src/gfx/balloons/SPAIN_REPUBLIC.gimp.png") {	balloonTemplate(0)  }
+spriteset (SpainRepublicBalloonBurning_SpriteSet, "src/gfx/balloons/SPAIN_REPUBLIC.gimp.png") {	balloonTemplate(65)  }
+
+switch (FEAT_AIRCRAFT, PARENT, SpainRepublicBalloonMotionCounterSwitch, motion_counter % 16) {
+	1..5:  SpainRepublicBalloonBurning_SpriteSet;
+	SpainRepublicBalloon_SpriteSet;
+}
+
+switch (FEAT_AIRCRAFT, SELF, HotAirBalloon_SpainRepublic, flight_state())
+{
+  16..20: SpainRepublicBalloonMotionCounterSwitch; // Flight
+  23: SpainRepublicBalloonBurning_SpriteSet; // Airport Take Off
+  26: SpainRepublicBalloonBurning_SpriteSet; // Heliport Take Off
+      SpainRepublicBalloon_SpriteSet; // Runway, etc..
+}

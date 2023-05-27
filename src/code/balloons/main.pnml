@@ -18,17 +18,23 @@ spriteset (balloonRotor_Spriteset, "src/gfx/balloons/COMPANY_COLORED.gimp.png") 
 
 #include "_companyColored.pnml"
 #include "_Rainbow.pnml"
+#include "_Spain.pnml"
+#include "_Galiza.pnml"
 
 
 switch (FEAT_AIRCRAFT, SELF, HotAirBallon_Sprites, cargo_subtype)
 {
   1: HotAirBalloon_Rainbow;
+  2: HotAirBalloon_SpainRepublic;
+  3: HotAirBalloon_GalizanEstreleira;
      HotAirBalloon_CompanyColored;
 }
 switch (FEAT_AIRCRAFT, SELF, HotAirBallon_cargo_subtype_text, cargo_subtype)
 {
   0: string(STR_HAB_2CC);
   1: string(STR_HAB_RAINBOW);
+  2: string(STR_HAB_SPAIN_REPUBLIC);
+  3: string(STR_HAB_GALIZAN_ESTRELEIRA);
      return CB_RESULT_NO_TEXT;
 }
 

@@ -1,0 +1,16 @@
+
+spriteset (GalizanEstreleiraBalloon_SpriteSet, "src/gfx/balloons/GALIZAN_ESTRELEIRA.gimp.png") {	balloonTemplate(0)  }
+spriteset (GalizanEstreleiraBalloonBurning_SpriteSet, "src/gfx/balloons/GALIZAN_ESTRELEIRA.gimp.png") {	balloonTemplate(65)  }
+
+switch (FEAT_AIRCRAFT, PARENT, GalizanEstreleiraBalloonMotionCounterSwitch, motion_counter % 16) {
+	1..5:  GalizanEstreleiraBalloonBurning_SpriteSet;
+	GalizanEstreleiraBalloon_SpriteSet;
+}
+
+switch (FEAT_AIRCRAFT, SELF, HotAirBalloon_GalizanEstreleira, flight_state())
+{
+  16..20: GalizanEstreleiraBalloonMotionCounterSwitch; // Flight
+  23: GalizanEstreleiraBalloonBurning_SpriteSet; // Airport Take Off
+  26: GalizanEstreleiraBalloonBurning_SpriteSet; // Heliport Take Off
+      GalizanEstreleiraBalloon_SpriteSet; // Runway, etc..
+}

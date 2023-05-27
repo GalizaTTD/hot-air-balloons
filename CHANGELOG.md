@@ -12,6 +12,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 ### Fixed
 -->
+## [1.1.0]
+
+### Added
+
+- Spanish 2nd Republic flag Balloon
+- Estreleira (Galician National Flag) Balloon
+
+### Changed
+
+- Better horizontal graphics (balloon curvature effect)
 ## [1.0.0]
 
 ### Added
