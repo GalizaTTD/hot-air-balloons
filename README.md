@@ -25,7 +25,7 @@ Table of Contents
 
 ## About The Project
 
-Customizes OpenTTD houses with Galician typical houses.
+Airship Mast & Hot Air balloons.
 
 
 <!-- GETTING STARTED -->
@@ -95,8 +95,8 @@ Distributed under the GNU GPL-v3 License. See [LICENSE][license-url] on for more
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [license-shield]: https://img.shields.io/badge/license-GNU%20GPL--v3-brightgreen
-[bananas-shield]: https://img.shields.io/badge/BaNaNaS-1.0-informational
+[bananas-shield]: https://img.shields.io/badge/BaNaNaS-1.0.0-informational
 [license-url]: https://github.com/GalizaTTD/hot-air-balloons/blob/main/LICENSE
 [project-url]: https://github.com/GalizaTTD/hot-air-balloons
 [issues-url]: https://github.com/GalizaTTD/hot-air-balloons/issues
-[bananas-url]: https://bananas.openttd.org/package/newgrf/4b463031
+[bananas-url]: https://bananas.openttd.org/manager/newgrf/4b463037
