@@ -1,0 +1,16 @@
+
+spriteset (RainbowBalloon_SpriteSet, "src/gfx/balloons/RAINBOW.gimp.png") {	balloonTemplate(0)  }
+spriteset (RainbowBalloonBurning_SpriteSet, "src/gfx/balloons/RAINBOW.gimp.png") {	balloonTemplate(65)  }
+
+switch (FEAT_AIRCRAFT, PARENT, RainbowBalloonMotionCounterSwitch, motion_counter % 16) {
+	1..5:  RainbowBalloonBurning_SpriteSet;
+	RainbowBalloon_SpriteSet;
+}
+
+switch (FEAT_AIRCRAFT, SELF, HotAirBalloon_Rainbow, flight_state())
+{
+  16..20: RainbowBalloonMotionCounterSwitch; // Flight
+  23: RainbowBalloonBurning_SpriteSet; // Airport Take Off
+  26: RainbowBalloonBurning_SpriteSet; // Heliport Take Off
+      RainbowBalloon_SpriteSet; // Runway, etc..
+}

@@ -49,6 +49,9 @@ item (FEAT_AIRPORTS, airp_mast, 0x1) {
    property {
       override: 2;
       name: string(STR_AIRP);
+      years_available: [1780,5000];
+      noise_level: 0;
+      maintenance_cost: 0.5;
       layouts: [N_TileLayout,E_TileLayout,S_TileLayout,W_TileLayout];
    }
    graphics {

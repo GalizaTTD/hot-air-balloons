@@ -4,16 +4,20 @@
 
 # GRF name and description
 STR_GRF_NAME        :{TITLE} {VERSION}
-STR_GRF_DESCRIPTION :{LTBLUE}Versión: {VERSION_STRING}{}{ORANGE}{TITLE} - {SILVER}Airship Mast & Hot Air balloons.{}{}{COPYRIGHT}{AUTHORS}{}{}{COPYRIGHT}{AUTHORS}
+STR_GRF_DESCRIPTION :{LTBLUE}Versión: {VERSION_STRING}{}{ORANGE}{TITLE} - {SILVER}Mástil de cepelín y globos aerostáticos.{}{}{COPYRIGHT}{AUTHORS}{}{}{COPYRIGHT}{AUTHORS}
 STR_MIN_OPENTTD_VERSION  :Requires OpenTTD >= 1.12.0
 
 
-STR_AIRP				:Airship Mast
-STR_SNOW				:Ground snow aware
-STR_NO_SNOW			:Ground not snow aware
+STR_AIRP				:Mástil de cepelín
+STR_SNOW				:Suelo consciente de la nieve
+STR_NO_SNOW			:Suelo NO consciente de la nieve
 
 # Cardinal direction
-STR_NORTH			:North
-STR_EAST				:East
-STR_SOUTH			:South
-STR_WEST				:West
+STR_NORTH			:Norte
+STR_EAST				:Este
+STR_SOUTH			:Sur
+STR_WEST				:Oeste
+# Ballooons
+STR_HOT_AIR_BALLOON				:Globo aerostático
+STR_HAB_2CC                   : con los colores de la compañía
+STR_HAB_RAINBOW               : con los colores del arcoiris

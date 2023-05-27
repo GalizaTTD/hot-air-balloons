@@ -8,5 +8,9 @@ grf {
 	min_compatible_version:	1;
 }
 
+cargotable {
+	PASS
+}
+
 #include "airship_mast/main.pnml"
 #include "balloons/main.pnml"

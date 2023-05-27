@@ -1,0 +1,16 @@
+
+spriteset (companyColoredBalloon_SpriteSet, "src/gfx/balloons/COMPANY_COLORED.gimp.png") {	balloonTemplate(0)  }
+spriteset (companyColoredBalloonBurning_SpriteSet, "src/gfx/balloons/COMPANY_COLORED.gimp.png") {	balloonTemplate(65)  }
+
+switch (FEAT_AIRCRAFT, PARENT, companyColoredBalloonMotionCounterSwitch, motion_counter % 16) {
+	1..5:  companyColoredBalloonBurning_SpriteSet;
+	companyColoredBalloon_SpriteSet;
+}
+
+switch (FEAT_AIRCRAFT, SELF, HotAirBalloon_CompanyColored, flight_state())
+{
+  16..20: companyColoredBalloonMotionCounterSwitch; // Flight
+  23: companyColoredBalloonBurning_SpriteSet; // Airport Take Off
+  26: companyColoredBalloonBurning_SpriteSet; // Heliport Take Off
+      companyColoredBalloon_SpriteSet; // Runway, etc..
+}

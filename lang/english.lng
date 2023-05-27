@@ -17,3 +17,7 @@ STR_NORTH			:North
 STR_EAST				:East
 STR_SOUTH			:South
 STR_WEST				:West
+# Ballooons
+STR_HOT_AIR_BALLOON				:Hot Air balloon
+STR_HAB_2CC                   : Company Colored
+STR_HAB_RAINBOW               : Rainbow Colored
